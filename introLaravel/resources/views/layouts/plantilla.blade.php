@@ -8,7 +8,7 @@
     @vite(['resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('css/fondo.css') }}">
 
-    <title>Plantilla</title>
+    <title>@yield('titulo')</title>
 </head>
 <body>
     

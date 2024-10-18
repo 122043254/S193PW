@@ -16,7 +16,7 @@
         <br>
         <h1><strong>Apellidos: </strong>Mondragon Morales</h1>
         <br>
-        <h1><strong>Edad: </strong>Programacion web</h1>
+        <h1><strong>Edad: </strong>19 años</h1>
         <br>
         <h1><strong>Año de nacimiento: </strong>2005</h1>
         <br>

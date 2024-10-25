@@ -35,23 +35,23 @@
                     @csrf
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre: </label>
-                        <input type="text" class="form-control" name="txtnombre" id="nombre">
-                        <small>{{ $errors->first('txtnombre') }}</small>                    
+                        <input type="text" class="form-control" name="txtnombre" id="nombre" value="{{ old('txtnombre') }}">
+                        <small class="text-danger fst-italic">{{ $errors->first('txtnombre') }}</small>                    
                     </div>
                     <div class="mb-3">
                         <label for="apellidos" class="form-label">Apellidos: </label>
-                        <input type="text" class="form-control" name="txtapellidos" id="apellidos">
-                        <small>{{ $errors->first('txtapellidos') }}</small>
+                        <input type="text" class="form-control" name="txtapellidos" id="apellidos" value="{{ old('txtapellidos') }}">
+                        <small class="text-danger fst-italic">{{ $errors->first('txtapellidos') }}</small>
                     </div>
                     <div class="mb-3">
                         <label for="correo" class="form-label">Correo: </label>
-                        <input type="text" class="form-control" name="txtcorreo">
-                        <small>{{ $errors->first('txtcorreo') }}</small>
+                        <input type="text" class="form-control" name="txtcorreo" value="{{ old('txtcorreo') }}">
+                        <small class="text-danger fst-italic">{{ $errors->first('txtcorreo') }}</small>
                     </div>
                     <div class="mb-3">
                         <label for="telefono" class="form-label">Telefono: </label>
-                        <input type="text" class="form-control" name="txttelefono">
-                        <small>{{ $errors->first('txttelefono') }}</small>
+                        <input type="text" class="form-control" name="txttelefono" value="{{ old('txttelefono') }}">
+                        <small class="text-danger fst-italic">{{ $errors->first('txttelefono') }}</small>
                     </div>
             </div>
 

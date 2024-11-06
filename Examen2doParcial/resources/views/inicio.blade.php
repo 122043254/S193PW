@@ -12,20 +12,23 @@
         <script>
             Swal.fire({
                 title: '{!! session('exito') !!}',
-                icon: 'success',
-            })
+                icon: 'success'
+            });
         </script>
     @endif
 
     <h1>Registro de prendas</h1>
-    <form  action="{{ route ('procesarPrendas') }}" method="POST">
-
+    <form  action="/procesarPrendas" method="POST">
+        @csrf
         <label for="prenda">Prenda:</label>
         <input type="text" name="txtprenda" id="prenda">
-        <label for="cantidad">Color:</label> 
-        <input type="number" name="txtcolor" id="cantidad">
+        <small>{{ $errors->first('txtprenda') }}</small>
+        <label for="color">Color:</label> 
+        <input type="text" name="txtcolor" id="color">
+        <small>{{ $errors->first('txtcolor') }}</small>
         <label for="cantidad">Cantidad:</label>
         <input type="number" name="txtcantidad" id="cantidad">
+        <small>{{ $errors->first('txtcantidad') }}</small>
         <button type="submit">Guardar Prendas</button>
 
     </form>

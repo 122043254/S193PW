@@ -12,7 +12,7 @@ class ControladorVistas extends Controller
         return view('inicio');
     }
 
-    public function procesarPrendas(request $request)
+    public function procesarPrenda(request $request)
     {
         $validacion = $request->validate([
             'txtprenda' => 'required|string',
@@ -20,11 +20,11 @@ class ControladorVistas extends Controller
             'txtcantidad' => 'required|numeric'
         ]);
 
-        $prenda = $peticion->input('txtprenda');
+        $prenda = $request->input('txtprenda');
 
-        session->flash('exito','Se guardo la prendra: '.$prenda);
+        session()->flash('exito', 'Se guardo: ' . $prenda . '');
 
-        return to_route('');
+        return to_route('rutaInicio');
 
     }
 

@@ -23,37 +23,37 @@
                 @csrf
                 <div class="mb3">
                     <label for="isbn" class="form-label">{{__('ISBN')}}</label>
-                    <input type="text" class="form-control" id="isbn" name="txtisbn" value="{{old('isbn')}}">
+                    <input type="text" class="form-control" id="isbn" name="txtisbn" value="{{old('txtisbn')}}">
                     <small class="text-danger fst-italic">{{ $errors->first('txtisbn') }}</small>
                 </div>
                 <div class="mb3">
                     <label for="titulo" class="form-label">{{__('Título')}}</label>
-                    <input type="text" class="form-control" id="titulo" name="txttitulo" value="{{old('titulo')}}">
+                    <input type="text" class="form-control" id="titulo" name="txttitulo" value="{{old('txttitulo')}}">
                     <small class="text-danger fst-italic">{{ $errors->first('txttitulo') }}</small>
                 </div>
                 <div class="mb3">
                     <label for="autor" class="form-label">{{__('Autor')}}</label>
-                    <input type="text" class="form-control" id="autor" name="txtautor" value="{{old('autor')}}">
+                    <input type="text" class="form-control" id="autor" name="txtautor" value="{{old('txtautor')}}">
                     <small class="text-danger fst-italic">{{ $errors->first('txtautor') }}</small>
                 </div>
                 <div class="mb3">
                     <label for="paginas" class="form-label">{{__('Número de páginas')}}</label>
-                    <input type="number" class="form-control" id="paginas" name="txtpaginas" value="{{old('paginas')}}">
+                    <input type="number" class="form-control" id="paginas" name="txtpaginas" value="{{old('txtpaginas')}}">
                     <small class="text-danger fst-italic">{{ $errors->first('txtpaginas') }}</small>
                 </div>
                 <div class="mb3">
                     <label for="editor" class="form-label">{{__('Año de publicación')}}</label>
-                    <input type="number" class="form-control" id="editor" name="txtaño" value="{{old('fechaPublicacion')}}">
+                    <input type="number" class="form-control" id="editor" name="txtaño" value="{{old('txtaño')}}">
                     <small class="text-danger fst-italic">{{ $errors->first('txtaño') }}</small>
                 </div>
                 <div class="mb3">
                     <label for="editor" class="form-label">{{__('Editorial')}}</label>
-                    <input type="text" class="form-control" id="editor" name="txteditorial" value="{{old('editor')}}">
+                    <input type="text" class="form-control" id="editor" name="txteditorial" value="{{old('txteditor')}}">
                     <small class="text-danger fst-italic">{{ $errors->first('txteditorial') }}</small>
                 </div>
                 <div class="mb3">
                     <label for="idioma" class="form-label">{{__('Email de Editorial')}}</label>
-                    <input type="text" class="form-control" id="idioma" name="txtemailEditorial" value="{{old('idioma')}}">
+                    <input type="text" class="form-control" id="idioma" name="txtemailEditorial" value="{{old('txtidioma')}}">
                     <small class="text-danger fst-italic">{{ $errors->first('txtemailEditorial') }}</small>
                 </div>
                 <div class="d-grid mt-4">

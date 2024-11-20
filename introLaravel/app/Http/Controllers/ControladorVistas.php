@@ -19,11 +19,6 @@ class ControladorVistas extends Controller
         return view('formulario');
     }
 
-    public function consulta()
-    {
-        return view('clientes');
-    }
-
     public function procesarCliente(validadorCliente $peticionV)
     {
         //return 'Si llego la info del cliente :)';

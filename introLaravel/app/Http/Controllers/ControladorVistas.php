@@ -46,7 +46,7 @@ class ControladorVistas extends Controller
         $usuario= $peticionV->input('txtNombre');
 
         session()->flash('exito','Se guardo el usuario: '.$usuario);
-        return to_route('rutaform');
+        return to_route('rutaForm');
 
     }
     

@@ -14,14 +14,16 @@
         <x-Alert style="background-color: greenyellow;" tipo="warning" > {{ $value }}</x-Alert>
         @endsession--}}
         
-        @session('exito')
-        {!<script>
-            Swal.fire({
-                title: "Good job!",
-                text: "You clicked the button!",
-                icon: "success"});
-           </script>!}
-        @endsession
+        @if(session('exito'))
+            <script>
+                Swal.fire({
+                    title: "¡Exito!",
+                    text: "{{{ session('exito') }}}",
+                    icon: "success",
+                    confirmButtonText: "Aceptar",
+                });
+            </script>
+        @endif
 
         <div class="card font-monospace">
 
@@ -31,7 +33,7 @@
 
             <div class="card-body text-justify">
 
-                <form class="mb-3" action="{{ route('rutaCrear') }}" method="POST">
+                <form class="mb-3" action="/procesarCliente" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label for="nombre" class="form-label">{{__('Nombre')}}: </label>

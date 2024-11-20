@@ -30,6 +30,6 @@ Route::get('/form', [ControladorVistas::class, 'formulario'])->name('rutaForm');
 Route::get('/clientes', [clienteControlador::class, 'index'])->name('rutaClientes');
 Route::get('/cliente/create', [clienteControlador::class, 'create'])->name('rutaCrear');
 Route::get('/cliente/{id}/edit', [clienteControlador::class, 'edit'])->name('rutaEditar');
-Route::post('/clientes', [clienteControlador::class, 'store']);
+Route::post('/procesarCliente', [clienteControlador::class, 'store']);
 Route::put('/clientes/{id}', [clienteControlador::class, 'update'])->name('rutaActualizar');
 Route::delete('/clientes/{id}', [clienteControlador::class, 'destroy'])->name('rutaEliminar');

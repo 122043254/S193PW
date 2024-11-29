@@ -58,7 +58,7 @@ class clienteControlador extends Controller
         ]);
 
         if ($updated) {
-            session()->flash('exito', 'Se actualizo el cliente con ID: ' . $id);
+            session()->flash('exito', 'Se actualizo el cliente');
         } else {
             session()->flash('error', 'No se pudo actualizar el cliente');
         }

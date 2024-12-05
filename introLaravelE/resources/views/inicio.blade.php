@@ -21,7 +21,8 @@
         <h1 class="display-1">{{__('Bienvenido Turista!')}}</h1>
         <p>{{__('Presiona el boton para iniciar...')}}</p>
 
-        <a href="/form" class="btn btn-primary">{{__('Ir al Registro')}}</a> <br>
+        <a href="{{ route('rutaFormulario') }}" class="btn btn-primary">{{__('Registrar Cliente')}}</a>
+        <br>
         <a href="{{ route('cliente.index') }}" class="btn btn-primary">{{__('Consultar Clientes')}}</a>
     </div>
 </body>

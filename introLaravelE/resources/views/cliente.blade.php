@@ -17,8 +17,12 @@
                 </div>
 
                 <div class="card-footer text-muted">
-                    <button href="{{ route('cliente.edit', $cliente->id) }}" type="submit" class="btn btn-warning btn-sm"> {{__('Actualizar')}}</button>
-                    <button  href="{{ route('cliente.destroy', $cliente->id) }}" type="submit" class="btn btn-danger btn-sm">  {{__('Eliminar')}} </button>
+                    <a href="{{ route('cliente.edit', $cliente->id) }}" type="submit" class="btn btn-warning btn-sm"> {{__('Actualizar')}}</a>
+                    <form action="{{ route('cliente.destroy', $cliente->id) }}" method="POST" style="display: inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm">{{ __('Eliminar') }}</button>
+                    </form>                
                 </div>
             </div>
         @endforeach

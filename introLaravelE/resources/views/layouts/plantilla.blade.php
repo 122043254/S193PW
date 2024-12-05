@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta http-equiv="X-UA-Compatible" content=""ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="" ie="edge">
 
     @vite(['resources/js/app.js'])
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -12,6 +12,17 @@
     <title>@yield('titulo')</title>
 </head>
 <body>
+
+    @if (session('exito'))
+        <script>
+            Swal.fire({
+                title: "{{ session('exito') }}",
+                icon: "success",
+                confirmButtonText: "Aceptar"
+            });
+        </script>
+    @endif
+
     {{-- inicia el navbar --}}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -23,10 +34,10 @@
                 <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="nav-link {{request()->routeIs('rutaform')?'text-warning':''}}" aria-current="page" href="{{ route(name: 'rutaform') }}">{{__('Registro Clientes')}}</a>
+                    <a class="nav-link {{request()->routeIs('rutaFormulario')?'text-warning':''}}" aria-current="page" href="{{ route(name: 'rutaFormulario') }}">{{__('Registro Clientes')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{request()->routeIs('rutaform')?'':'text-warning'}}" href="{{ route(name: 'cliente.index') }}">{{__('Consulta Clientes')}}</a>
+                    <a class="nav-link {{request()->routeIs('cliente.index')?'text-warning':''}}" aria-current="page" href="{{ route(name: 'cliente.index') }}">{{__('Consultar Clientes')}}</a>
                 </li>
                 </ul>
             </div>

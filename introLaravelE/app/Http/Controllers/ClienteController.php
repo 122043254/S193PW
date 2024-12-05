@@ -8,12 +8,17 @@ use Illuminate\Http\Request;
 
 class ClienteController extends Controller
 {
+    public function home()
+    {
+        return view('inicio');
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $consulta= cliente::all();
+        $consulta = cliente::all();
         return view('cliente', compact('consulta'));
     }
 
@@ -22,7 +27,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('formulario');
     }
 
     /**
@@ -30,16 +35,15 @@ class ClienteController extends Controller
      */
     public function store(validadorCliente $request)
     {
-        $addcliente= new cliente();
-        $addcliente->nombre= $request->input('txtnombre');
-        $addcliente->apellido= $request->input('txtapellidos');
-        $addcliente->correo= $request->input('txtcorreo');
-        $addcliente->telefono= $request->input('txttelefono');
+        $addcliente = new cliente();
+        $addcliente->nombre = $request->input('txtnombre');
+        $addcliente->apellido = $request->input('txtapellidos');
+        $addcliente->correo = $request->input('txtcorreo');
+        $addcliente->telefono = $request->input('txttelefono');
         $addcliente->save();
 
-        $msj= $request->input('txtnombre');
-        session()->flash('exito','Se guardo el usuario: '.$msj);
-        return redirect()->back();
+        session()->flash('exito', 'Se guardó el usuario: ' . $addcliente->nombre);
+        return redirect()->route('cliente.index');
     }
 
     /**
@@ -47,7 +51,6 @@ class ClienteController extends Controller
      */
     public function edit(cliente $cliente)
     {
-        $cliente = cliente::findOrFail($cliente);
         return view('formularioEditar', compact('cliente'));
     }
 
@@ -56,14 +59,14 @@ class ClienteController extends Controller
      */
     public function update(Request $request, cliente $cliente)
     {
-        $cliente = cliente::findOrFail($cliente);
-        $cliente->nombre= $request->input('txtnombre');
-        $cliente->apellido= $request->input('txtapellidos');
-        $cliente->correo= $request->input('txtcorreo');
-        $cliente->telefono= $request->input('txttelefono');
+        $cliente->nombre = $request->input('txtnombre');
+        $cliente->apellido = $request->input('txtapellidos');
+        $cliente->correo = $request->input('txtcorreo');
+        $cliente->telefono = $request->input('txttelefono');
         $cliente->save();
-        session()->flash('exito','Se actualizo el usuario: '.$cliente->nombre);
-        return redirect()->back();
+
+        session()->flash('exito', 'Se actualizó el usuario: ' . $cliente->nombre);
+        return redirect()->route('cliente.index');
     }
 
     /**
@@ -71,9 +74,9 @@ class ClienteController extends Controller
      */
     public function destroy(cliente $cliente)
     {
-        $cliente = cliente::findOrFail($cliente);
         $cliente->delete();
-        session()->flash('exito','Se elimino el usuario: '.$cliente->nombre);
-        return redirect()->back();
+
+        session()->flash('exito', 'Se eliminó el usuario: ' . $cliente->nombre);
+        return redirect()->route('cliente.index');
     }
 }
